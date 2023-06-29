@@ -17,6 +17,8 @@
 </head>
 
 <body>
+    <?php
+    echo'
     <div class="wrap">
         <!-- For Logo -->
         <div class="logo">
@@ -51,11 +53,13 @@
             </div>
         </div>
     </div>
-
+    
     <!-- movie app js -->
     <script src="movieAPI.js">
 
     </script>
+    ';
+    ?>
 </body>
 
 </html>
