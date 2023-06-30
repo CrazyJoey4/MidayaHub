@@ -19,6 +19,35 @@ a {
     text-decoration: none;
 }
 
+.topnav {
+    background-color: var(--md-dark-color);
+}
+
+.topnav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: rgb(225, 240, 253);
+    text-align: center;
+    padding: 1vw 3.4vw;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #227eb7;
+    transition: all 0.5s;
+}
+
 img {
     width: 100%;
     display: block;
