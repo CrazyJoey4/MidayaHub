@@ -1,89 +1,61 @@
-const movieSearchBox = document.getElementById('movie-search-box');
-const searchList = document.getElementById('search-list');
-const resultGrid = document.getElementById('result-grid');
+const newsSearchBox = document.getElementById('news-search-box');
+const searchContainer = document.getElementById('search-container');
 
-// load movie from API
-const apikey = 'c8ec4741';
+// load news from API
+const apikey = '165a04ca7dd748cc89aa37d46023a3e2';
 
-async function loadMovies(searchTitle) {
-    const URL = `http://www.omdbapi.com/?s=${searchTitle}&page=1&apikey=${apikey}`;
-    const res = await fetch(`${URL}`);
+async function loadNews(title) {
+    const url = `https://newsapi.org/v2/everything?q=${title}&apikey=${apikey}`;
+    const res = await fetch(`${url}`);
     const data = await res.json();
+    return data
 
-    if (data.Response == "True") displayMovieList(data.Search);
+    //if (data.Response == "True") displayNewsList(data.Search);
 }
+loadNews("all").then(data => displayNews(data.articles))
 
-function findMovies() {
-    let searchTerm = (movieSearchBox.value).trim();
-    if (searchTerm.length > 0) {
-        searchList.classList.remove('hide-search-list');
-        loadMovies(searchTerm);
-    } else {
-        searchList.classList.add('hide-search-list');
-    }
-}
-
-function displayMovieList(movies) {
-    searchList.innerHTML = "";
-    for (let idx = 0; idx < movies.length; idx++) {
-        let movieListItem = document.createElement('div');
-        movieListItem.dataset.id = movies[idx].imdbID;
-        movieListItem.classList.add('search-list-item');
-
-        if (movies[idx].Poster != "N/A") {
-            moviePoster = movies[idx].Poster;
+function displayNews(details) {
+    let mainHTML = ''
+    for (let i = 0; i < details.length; i++) {
+        if (details[i].urlToImage) {
+            mainHTML += `
+            <div class="card">
+                <a href=${details[i].url}>
+                <img src=${details[i].urlToImage} lazy="loading"/>
+                <h3>${details[i].title}</h3>
+                <div class="publisherdate">
+                    <p>${details[i].source.name}</p>
+                    <span> • </span>
+                    <p>${new Date(details[i].publishedAt).toLocaleDateString()}</p>
+                </div>
+                <div class="description">
+                    ${details[i].description}
+                </div>
+            </div>`
         }
-        else {
-            moviePoster = "media/smiley.jpg";
-        }
-        movieListItem.innerHTML = `
-        <div class="search-item-thumbnail">
-            <img src="${moviePoster}">
-        </div>
-        <div class="search-item-info">
-            <h3>${movies[idx].Title}</h3>
-            <p>${movies[idx].Year}</p>
-        </div>
-        `;
-        searchList.appendChild(movieListItem);
     }
-    loadMovieDetails();
+    document.querySelector("main").innerHTML = mainHTML
 }
 
-function loadMovieDetails() {
-    const searchListMovies = searchList.querySelectorAll('.search-list-item');
-    searchListMovies.forEach(movie => {
-        movie.addEventListener('click', async () => {
-            searchList.classList.add('hide-search-list');
-            movieSearchBox.value = "";
-            const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&page=1&apikey=${apikey}`);
-            const movieDetails = await result.json();
+searchContainer.addEventListener("submit",async(e)=>{
+    e.preventDefault()
+    console.log(newsSearchBox.value)
 
-            displayMovieDetails(movieDetails);
-        });
-    });
-}
+    const data = await loadNews(newsSearchBox.value)
+    displayNews(data.articles)
 
-function displayMovieDetails(details) {
-    resultGrid.innerHTML = `
-    <div class="movie-poster">
-        <img src="${(details.Poster != "N/A" ? details.Poster : "media/smiley.jpg")}" alt="movie-poster">
-    </div>
-    <div class="movie-info">
-        <h3 class="movie-title">${details.Title}</h3>
-        <ul class="movie-detail-info">
-            <li class="year">Year: ${details.Year}</li>
-            <li class="rated">Ratings: ${details.Rated}</li>
-            <li class="released">Released On: ${details.Released}</li>
-        </ul>
-        <p class="genre"><b>Genre: </b> ${details.Genre}</p>
-        <p class="writer"><b>Writer: </b> ${details.Writer}</p>
-        <p class="actors"><b>Actors: </b> ${details.Actors}</p>
-        <p class="plot"><b>Plot: </b> ${details.Plot}</p>
-        <p class="language"><b>Language: </b> ${details.Language}</p>
-        <p class="awards"><b><i class="fas fa-award"></i></b> ${details.Awards}</p>
-    </div>
-    `;
+})
+
+// searchBtnMobile.addEventListener("submit",async(e)=>{
+//     e.preventDefault()
+//     const data = await fetchData(searchInputMobile.value)
+//     renderMain(data.articles)
+// })
+
+
+async function Search(query){
+    const data = await loadNews(query)
+    displayNews(data.articles)
 }
 
 window.addEventListener('click', (event) => {
