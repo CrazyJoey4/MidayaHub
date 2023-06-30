@@ -32,14 +32,14 @@ a {
 
 .topnav li {
     float: left;
-    width: 14vw;
+    width: 15rem;
 }
 
 .topnav li a {
     display: block;
     color: rgb(225, 240, 253);
     text-align: center;
-    padding: 1vw 3.4vw;
+    padding: 0.8rem 0;
     font-size: 1.3rem;
     text-decoration: none;
 }
@@ -64,6 +64,11 @@ img {
     padding: 0 1rem;
 }
 
+.logo {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--light-dark-color);
+}
+
 .container ul {
     list-style-type: none;
     margin: 0;
@@ -73,14 +78,20 @@ img {
 
 .container li {
     display: inline-block;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
 }
 
 .container li a {
-    color: rgb(225, 240, 253);
     text-align: center;
     padding: 0 1vw;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     text-decoration: none;
+}
+
+.container li span {
+    color: var(--purple-color);
 }
 
 .search-container {
@@ -89,21 +100,6 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.logo {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--light-dark-color);
-}
-
-.logo li {
-    font-size: 2rem;
-    color: #fff;
-    font-weight: bold;
-}
-
-.logo li span {
-    color: var(--purple-color);
 }
 
 .search-element {
@@ -279,8 +275,20 @@ img {
 }
 
 @media only screen and (max-width: 450px) {
-    .logo p {
+    .topnav li {
+        width: 6.4rem;
+    }
+
+    .topnav li a {
+        font-size: 0.8rem;
+    }
+    
+    .container li {
         font-size: 1.4rem;
+    }
+
+    .container li a {
+        font-size: 0.9rem;
     }
 
     .search-element h3 {

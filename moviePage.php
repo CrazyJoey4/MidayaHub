@@ -11,22 +11,18 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="web.css">
 
-    <title>- Movie Search -</title>
+    <title> Movie </title>
     <link rel = "icon" href = "media/movie-icon.png">
 
 </head>
 
 <body>
     <?php
-    echo'
-    <div class="wrap">
-        <!-- For Logo -->
-        <div class="logo">
-            <div class="container">
-                <p>- Midaya<span>Hub -</span></p>
-            </div>
-        </div>
+    echo '<div class="wrap">';
 
+    include "./navBar.php";
+    
+    echo'
         <!-- Search Container -->
         <div class="search-container">
             <div class="search-element">
