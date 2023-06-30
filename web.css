@@ -29,6 +29,9 @@ a {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .topnav li {
@@ -55,9 +58,12 @@ img {
     display: block;
 }
 
-.wrap {
-    min-height: 100vh;
-    background-color: var(--dark-color);
+.topwrap {
+    background-color: var(--light-dark-color);
+}
+
+.active {
+    color: var(--purple-color) !important;
 }
 
 /* MidayaHub */
@@ -105,12 +111,17 @@ main {
     margin: auto;
 }
 
+.wrap {
+    min-height: 100vh;
+    background-color: var(--md-dark-color);
+}
+
 .card {
     display: flex;
     flex-direction: column;
     background-color: #052031;
     width: 25rem;
-    color:#fff;
+    color: #fff;
     box-shadow: 0.2rem 0.2rem 0.6rem 0.1rem rgba(94, 124, 138, 0.644);
     border-radius: 0.5rem;
     overflow: hidden;
@@ -121,7 +132,8 @@ main {
     background-color: deepskyblue;
 }
 
-.card h3, .card div {
+.card h3,
+.card div {
     padding: 0.8rem 1rem;
     margin: 0;
 }
@@ -157,7 +169,8 @@ main {
         justify-content: center;
     }
 
-    .card h3, .card div {
+    .card h3,
+    .card div {
         padding: 0.4rem 0.8rem;
     }
 }
@@ -429,7 +442,7 @@ main {
     .topnav li a {
         font-size: 0.8rem;
     }
-    
+
     .container li {
         font-size: 1.4rem;
     }
