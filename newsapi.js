@@ -45,7 +45,7 @@ searchContainer.addEventListener("submit",async(e)=>{
     displayNews(data.articles)
 
 })
-
+    
 // searchBtnMobile.addEventListener("submit",async(e)=>{
 //     e.preventDefault()
 //     const data = await fetchData(searchInputMobile.value)
