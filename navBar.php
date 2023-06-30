@@ -21,7 +21,10 @@
         <!-- For Logo -->
         <div class="logo">
             <div class="container">
-                <p>- Midaya<span>Hub -</span></p>
+            <ul>
+                <li>- Midaya<span>Hub -</span></li>
+                <li style="float:right"><a href="profile.php"><span class="fa fa-user"></span></a></li>
+                </ul>
             </div>
         </div>
 
@@ -32,8 +35,6 @@
                 <li><a href="newsPage.php"><span class="fa fa-newspaper"></span> News </a></li>
                 <li><a href="bookPage.php"><span class="fa fa-book"></span> Book </a></li>
                 <li><a href="musicPage.php"><span class="fa fa-music"></span> Music </a></li>
-
-                <li style="float:right"><a href="profile.php" class="profile"><span class="fa fa-user"></span></a></li>
             </ul>
         </div>
     ';
