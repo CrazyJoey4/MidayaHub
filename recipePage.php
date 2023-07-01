@@ -22,7 +22,6 @@
                 <div class="search-element">
                     <h4>Search Recipe:</h4>
                     <input type="text" class="form-control" placeholder="Type A Dish Name Here.." id="user-inp"/>
-                    <button id="search-btn">Search</button>
                 </div>
             </form>
             <div id="result">
