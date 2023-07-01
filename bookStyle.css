@@ -1,0 +1,49 @@
+body {
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.center {
+    margin: auto;
+    margin-top: 200px;
+}
+
+#header {
+    font-family: 'Righteous', sans-serif;
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: 'Righteous', sans-serif;   
+}
+
+.book-list {
+    align-content: center;
+    margin-top: 10px;
+    visibility: hidden;
+}
+
+.text-center {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    padding: 0 0 100px 0;
+}
+
+.btn-primary{
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    padding: 10px 5px;
+    border-radius: 4px;
+}
+
+#list.output {
+    background-color: white;
+}
+
+
