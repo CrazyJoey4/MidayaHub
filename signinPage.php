@@ -24,7 +24,7 @@
                 <h2 style="text-transform: uppercase;">Sign In</h2>
             </div>
 
-            <br/><br/>
+            <br/>
 
             <div class="wrap">
                 <form>
@@ -42,8 +42,9 @@
                     
                     <br><br><br>
                     
-                    <input type="submit" name="Sign" id="Sign" value="Log In" class="submit">
-                    <br>						
+                    <div class="login-btn">
+                        <input type="submit" name="Sign" id="Sign" value="Sign In" class="login">
+                    </div>				
                 </form>
             </div>	
         </form>
