@@ -12,7 +12,8 @@
 
 <body>
     <?php
-    echo '<div class="wrap">';
+    echo '
+    <div class="wrap">';
     echo '
         <!-- Search Container -->
         <div class="search-container">
@@ -41,12 +42,19 @@
                 </div>
             </div>
         </div>
+
+        
+        <div class="main-content" id="main-content"></div>
     </div>
+    '?>
     
     <!-- movie app js -->
     <script src="movieAPI.js"></script>
-    ';
-    ?>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            popularMovies();
+        });
+    </script>
 </body>
 
 </html>
