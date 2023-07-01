@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<meta charset='utf-8'>
+    <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
@@ -33,14 +33,10 @@
                         <label>ID</label>
                     </div>
                         
-                    <br><br><br>
-                        
                     <div class="InputText">
                         <input type="password" name="User_pwd" id="User_pwd" required>
                         <label>Password</label>
                     </div>
-                    
-                    <br><br><br>
                     
                     <div class="login-btn">
                         <input type="submit" name="Sign" id="Sign" value="Sign In" class="login">
@@ -48,10 +44,8 @@
                 </form>
             </div>	
         </form>
-    </div>
+    </div>    
     
-    <!-- news app js -->
-    <script src="newsapi.js"></script>
     ';
     ?>
 </body>

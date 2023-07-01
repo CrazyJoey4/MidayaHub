@@ -38,7 +38,7 @@ body {
 }
 
 .wrap {
-    padding: 3rem;
+    padding: 2rem 3rem;
 }
 
 .wrap .InputText {
@@ -47,6 +47,7 @@ body {
     height: 2.2rem;
     width: 100%;
     position: relative;
+    margin-bottom: 45px;
 }
 
 .wrap .InputText input {
