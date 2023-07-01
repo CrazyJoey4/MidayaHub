@@ -16,11 +16,12 @@
     echo '
         <!-- Search Container -->
         <div class="search-container">
-            <div class="search-element">
-                <h3>Search News:</h3>
-                <input type="text" class="form-control" placeholder="Search News Keyword here..." id="news-search-box">
+            <form id="search-form">
+                <div class="search-element">
+                    <h3>Search News:</h3>
+                    <input type="text" class="form-control" placeholder="Search News Keyword here..." id="news-search-box">
                 </div>
-            </div>
+            </form>
         </div>
 
         <main></main>
