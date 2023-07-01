@@ -141,14 +141,10 @@ main {
     text-decoration: none;
 }
 
-.card h5,
+.card h4,
 .card div {
-    padding: 0.6rem 0.6rem;
+    padding: 1rem 0.6rem;
     margin: 0;
-}
-
-.card h5 {
-    font-size: 1rem;
 }
 
 .publisherdate {
