@@ -18,11 +18,13 @@
         <div class="search-container">
             <form id="search-form">
                 <div class="search-element">
-                    <h3>Search News:</h3>
-                    <input type="text" class="form-control" placeholder="Search News Keyword here..." id="news-search-box">
+                    <h4>Search News:</h4>
+                    <input type="text" class="form-control" placeholder="Search news keyword here..." id="news-search-box">
                 </div>
             </form>
         </div>
+
+        <br/>
 
         <main></main>
     </div>

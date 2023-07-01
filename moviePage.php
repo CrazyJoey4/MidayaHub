@@ -17,8 +17,8 @@
         <!-- Search Container -->
         <div class="search-container">
             <div class="search-element">
-                <h3>Search Movie:</h3>
-                <input type="text" class="form-control" placeholder="Search Movie Title here..." id="movie-search-box"
+                <h4>Search Movie:</h4>
+                <input type="text" class="form-control" placeholder="Search movie title here..." id="movie-search-box"
                     onkeyup="findMovies()">
 
                 <!-- List here -->
@@ -30,6 +30,8 @@
             </div>
         </div>
 
+        <br/>
+        
         <!-- Resut Container -->
         <div class="container">
             <div class="result-container">

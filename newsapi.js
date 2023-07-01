@@ -19,7 +19,7 @@ function displayNews(details) {
             <div class="card">
                 <a href=${details[i].url} style="color:#fff">
                 <img src=${details[i].urlToImage} lazy="loading"/>
-                <h3>${details[i].title}</h3>
+                <h5>${details[i].title}</h5>
                 <div class="publisherdate">
                     <p>${details[i].source.name}</p>
                     <span> • </span>

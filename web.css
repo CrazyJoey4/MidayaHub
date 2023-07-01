@@ -1,8 +1,10 @@
 :root {
     --md-dark-color: #1d1d1d;
     --dark-color: #171717;
-    --light-dark-color: #292929;
-    --purple-color: #5a7ee0;
+    --light-dark-color: #2d2f30;
+    --dark-purple-color: #3f429e;
+    --purple-color: #7d83f2;
+    --light-purple-color: #bba5f5;
 }
 
 * {
@@ -12,7 +14,7 @@
 }
 
 body {
-    font-family: 'Arial';
+    font-family: 'Verdana';
 }
 
 a {
@@ -55,6 +57,10 @@ a {
     color: var(--purple-color);
 }
 
+.topwrap {
+    background-color: var(--light-dark-color);
+}
+
 /* Navigation Bar */
 .topnav {
     background-color: var(--md-dark-color);
@@ -72,7 +78,7 @@ a {
 
 .topnav li {
     float: left;
-    width: 15rem;
+    width: 20rem;
 }
 
 .topnav li a {
@@ -80,13 +86,18 @@ a {
     color: rgb(225, 240, 253);
     text-align: center;
     padding: 0.8rem 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
     text-decoration: none;
 }
 
 .topnav li a:hover {
-    background-color: #227eb7;
+    background-color: var(--dark-purple-color);
     transition: all 0.5s;
+}
+
+.active {
+    color: var(--light-purple-color) !important;
 }
 
 .wrap {
@@ -99,15 +110,7 @@ img {
     display: block;
 }
 
-.topwrap {
-    background-color: var(--light-dark-color);
-}
-
-.active {
-    color: var(--purple-color) !important;
-}
-
-/* Show Cards */
+/* Show News Cards */
 main {
     display: flex;
     flex-direction: column;
@@ -124,7 +127,7 @@ main {
     box-shadow: 0.2rem 0.2rem 0.6rem 0.1rem rgba(94, 124, 138, 0.644);
     border-radius: 0.4rem;
     overflow: hidden;
-    padding-bottom: 1rem;
+    padding-bottom: 0.8rem;
 }
 
 .card img {
@@ -138,10 +141,14 @@ main {
     text-decoration: none;
 }
 
-.card h3,
+.card h5,
 .card div {
     padding: 0.6rem 0.6rem;
     margin: 0;
+}
+
+.card h5 {
+    font-size: 1rem;
 }
 
 .publisherdate {
@@ -164,6 +171,8 @@ main {
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     margin: 0;
+    height: 6.2rem;
+    font-size: 0.9rem;
     text-align: justify;
     line-height: 1.4rem;
 }
@@ -176,15 +185,16 @@ main {
         justify-content: center;
     }
 
-    .card h3,
+    .card h5,
     .card div {
         padding: 0.4rem 0.8rem;
     }
 }
 
+/* Search Bar */
 .search-container {
-    background-color: var(--md-dark-color);
-    height: 180px;
+    background-color: var(--dark-purple-color);
+    height: 6rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -198,23 +208,22 @@ main {
     position: relative;
 }
 
-.search-element h3 {
+.search-element h4 {
     align-self: center;
     margin-right: 1rem;
-    font-size: 1.3rem;
     color: #fff;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
 }
 
 .search-element .form-control {
-    padding: 1rem 2rem;
-    font-size: 1.4rem;
+    padding: 0.8rem 1.4rem;
+    font-size: 1rem;
     border: none;
-    border-radius: 5px;
+    border-radius: 1.5rem;
     outline: none;
     color: var(--light-dark-color);
-    width: 700px;
+    width: 45rem;
 }
 
 .search-list {
@@ -263,7 +272,7 @@ main {
     opacity: 0.6;
 }
 
-/* thumbnail */
+/* Thumbnail */
 .search-list::-webkit-scrollbar {
     width: 8px;
 }
@@ -283,7 +292,7 @@ main {
     display: none;
 }
 
-/* movie result */
+/* Movie Results */
 .result-container {
     padding: 10px 0;
 }
@@ -362,86 +371,7 @@ main {
     margin: 1rem 0.7rem 0 0;
 }
 
-/* news result */
-.result-container {
-    padding: 10px 0;
-}
-
-.news-poster img {
-    max-width: 300px;
-    margin: 0 auto;
-    border: 4px solid #fff;
-}
-
-.news-info {
-    text-align: center;
-    color: #fff;
-    padding-top: 15px;
-}
-
-.news-title {
-    font-size: 2rem;
-    color: var(--purple-color);
-}
-
-.news-detail-info {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-}
-
-.news-info .year {
-    font-weight: 500;
-}
-
-.news-info .rated {
-    background-color: var(--purple-color);
-    padding: 0 0.4rem;
-    margin: 0 0.4rem;
-    border-radius: 3px;
-    font-weight: 600;
-}
-
-.news-info .released {
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
-
-.news-info .writer {
-    padding: 0.5rem;
-    margin: 1rem 0;
-}
-
-.news-info .genre {
-    background-color: var(--light-dark-color);
-    display: inline-block;
-    padding: 0.5rem;
-    border-radius: 3px;
-}
-
-.news-info .plot {
-    max-width: 400px;
-    margin: 1rem auto;
-}
-
-.news-info .language {
-    color: var(--purple-color);
-    font-style: italic;
-}
-
-.news-info .awards {
-    font-weight: 300;
-    font-size: 0.9rem;
-}
-
-.news-info .awards i {
-    color: var(--purple-color);
-    margin: 1rem 0.7rem 0 0;
-}
-
-@media only screen and (max-width: 450px) {
+@media all and (max-width: 450px) {
     .topnav li {
         width: 6.4rem;
     }
@@ -484,7 +414,7 @@ main {
     }
 }
 
-@media only screen and (min-width: 800px) {
+@media all and (min-width: 800px) {
     .search-element {
         flex-direction: row;
     }
