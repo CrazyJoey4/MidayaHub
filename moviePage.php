@@ -33,7 +33,7 @@
 
         <br/>
         
-        <!-- Resut Container -->
+        <!-- Result Container -->
         <div class="container">
             <div class="result-container">
                 <div class="result-grid" id="result-grid">
