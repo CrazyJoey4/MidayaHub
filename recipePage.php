@@ -24,10 +24,18 @@
                     <input type="text" class="form-control" placeholder="Type A Dish Name Here.." id="user-inp"/>
                 </div>
             </form>
-            <div id="result">
 
+        </div>
+
+        <!-- Result Container -->
+        <div class="container">
+            <div class="result-container">
+                <div id="result">
+
+                </div>
             </div>
         </div>
+        
         <!-- Script -->
         <script src="recipe.js"></script>
     </body>

@@ -33,7 +33,7 @@
                     <li><a href="newsPage.php" <?php if (basename($_SERVER['PHP_SELF']) == 'newsPage.php')
                         echo 'class="active"'; ?>><span class="fa fa-newspaper"></span> News </a></li>
                     <li><a href="recipePage.php" <?php if (basename($_SERVER['PHP_SELF']) == 'recipePage.php')
-                        echo 'class="active"'; ?>><span class="fa fa-book"></span> Book </a></li>
+                        echo 'class="active"'; ?>><span class="fa fa-book"></span> Recipe </a></li>
                     <li><a href="musicPage.php" <?php if (basename($_SERVER['PHP_SELF']) == 'musicPage.php')
                         echo 'class="active"'; ?>><span class="fa fa-music"></span> Music </a></li>
                 </ul>
