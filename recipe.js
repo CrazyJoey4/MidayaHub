@@ -46,17 +46,17 @@ searchForm.addEventListener("submit", async(e) => {
             let ingredientCon = document.getElementById("ingredient-con");
             let parent = document.createElement("ul");
             let recipe = document.getElementById("recipe");
+            
             ingredients.forEach((i) => {
                 let child = document.createElement("li");
                 child.innerText = i;
                 parent.appendChild(child);
                 ingredientCon.appendChild(parent);
             });
-            
         })
 
         .catch(() => {
-            result.innerHTML = `<h3>Invalid Input</h3>`;
+            alert("Invalid Input");
         });
     }
 });
