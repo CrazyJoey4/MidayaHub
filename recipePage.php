@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <div class="main-content" id="main-content"></div>
+        <div class="main-recipe" id="main-recipe"></div>
     </div>
     '; ?>
 

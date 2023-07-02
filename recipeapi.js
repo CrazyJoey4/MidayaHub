@@ -34,15 +34,15 @@ searchForm.addEventListener("submit", async(e) => {
             console.log(ingredients);
             resultCon.innerHTML = `
                 <div class="result">
-                <img src=${myMeal.strMealThumb}>
-                <div class="details">
-                    <h2>${myMeal.strMeal}</h2>
-                    <h4>${myMeal.strArea}</h4>
-                </div>
-                <div id="ingredient-con"></div>
-                <div id="recipe">
-                    <pre id="instructions">${myMeal.strInstructions}</pre>
-                </div>
+                    <img src=${myMeal.strMealThumb}>
+                    <div class="details">
+                        <h2>${myMeal.strMeal}</h2>
+                        <h4>${myMeal.strArea}</h4>
+                    </div>
+                    <div id="ingredient-con"></div>
+                    <div id="recipe">
+                        <pre id="instructions"><label><b>Steps: </b></label><br/>${myMeal.strInstructions}</pre>
+                    </div>
                 </div>
                 `;
             let ingredientCon = document.getElementById("ingredient-con");
