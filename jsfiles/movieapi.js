@@ -20,7 +20,7 @@ async function popularMovies() {
     const data = await res.json();
 
     if (data.Response == "True") {        
-        const movies = data.Search.slice(0, 9);
+        const movies = data.Search.slice(0, 8);
         displayPopularMovies(movies);
     }
 }

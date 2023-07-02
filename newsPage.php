@@ -31,7 +31,11 @@
     '; ?>
 
     <!-- news app js -->
-    <script src="jsfiles/newsapi.js"></script>
+    <script src="jsfiles/newsapi.js">
+        document.addEventListener("DOMContentLoaded", function() {
+            loadNews("all");
+        });
+    </script>
 </body>
 
 </html>
