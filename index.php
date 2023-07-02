@@ -7,6 +7,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <title> Sign In </title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css"
         integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,8 +17,6 @@
 </head>
 
 <body>
-    <?php
-    echo '
     <div class="login-block">
         <form method="post" action="signinCheck.php" class="login-form">
             <div class="container">
@@ -32,7 +32,6 @@
                         <input type="text" name = "User_ID" id = "User_ID" required>
                         <label>ID</label>
                     </div>
-                        
                     <div class="InputText">
                         <input type="password" name="User_pwd" id="User_pwd" required>
                         <label>Password</label>
@@ -40,14 +39,14 @@
                     
                     <div class="login-btn">
                         <input type="submit" name="Sign" id="Sign" value="Sign In" class="login">
-                    </div>				
+                    </div>
+
+                    <div class="not-register">
+                        <a href="registerPage.php">Do not have an account yet?</a>
+                    </div>
                 </form>
             </div>	
         </form>
     </div>    
-    
-    ';
-    ?>
 </body>
-
 </html>

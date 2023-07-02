@@ -14,7 +14,7 @@
 }
 
 body {
-    font-family: 'Verdana';
+    font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -28,8 +28,8 @@ a {
 }
 
 .logo {
-    padding: 1.4rem 0;
-    border-bottom: 1px solid var(--light-dark-color);
+    padding: 0.8rem 0;
+    border-bottom: 0.1rem solid var(--light-dark-color);
 }
 
 .container ul {

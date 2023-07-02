@@ -6,9 +6,8 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css"
-        integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css" integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./web.css">
 </head>
 
@@ -29,13 +28,13 @@
             <div class="topnav">
                 <ul>
                     <li><a href="moviePage.php" <?php if (basename($_SERVER['PHP_SELF']) == 'moviePage.php')
-                        echo 'class="active"'; ?>><span class="fa fa-television"></span> Movie</a></li>
+                                                    echo 'class="active"'; ?>><span class="fa fa-television"></span> Movie</a></li>
                     <li><a href="newsPage.php" <?php if (basename($_SERVER['PHP_SELF']) == 'newsPage.php')
-                        echo 'class="active"'; ?>><span class="fa fa-newspaper"></span> News </a></li>
+                                                    echo 'class="active"'; ?>><span class="fa fa-newspaper"></span> News </a></li>
                     <li><a href="recipePage.php" <?php if (basename($_SERVER['PHP_SELF']) == 'recipePage.php')
-                        echo 'class="active"'; ?>><span class="fa fa-book"></span> Recipe </a></li>
+                                                        echo 'class="active"'; ?>><span class="fa fa-book"></span> Recipe </a></li>
                     <li><a href="musicPage.php" <?php if (basename($_SERVER['PHP_SELF']) == 'musicPage.php')
-                        echo 'class="active"'; ?>><span class="fa fa-music"></span> Music </a></li>
+                                                    echo 'class="active"'; ?>><span class="fa fa-music"></span> Music </a></li>
                 </ul>
             </div>
         </div>

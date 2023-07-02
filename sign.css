@@ -10,7 +10,7 @@
 
 body {
     background-color: var(--light-dark-color);
-    font-family: "Verdana";
+    font-family: "Poppins", sans-serif;
 }
 
 .login-block, .signup-block {
