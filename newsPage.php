@@ -28,11 +28,10 @@
 
         <main></main>
     </div>
-    
+    ';?>
+
     <!-- news app js -->
     <script src="newsapi.js"></script>
-    ';
-    ?>
 </body>
 
 </html>

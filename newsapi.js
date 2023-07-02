@@ -16,7 +16,7 @@ function displayNews(details) {
     for (let i = 0; i < details.length; i++) {
         if (details[i].urlToImage) {
             mainHTML += `
-            <div class="card">
+            <div class="news-card">
                 <a href=${details[i].url} style="color:#fff">
                 <img src=${details[i].urlToImage} lazy="loading"/>
                 <h4>${details[i].title}</h4>

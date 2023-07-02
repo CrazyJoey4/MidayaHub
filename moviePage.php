@@ -49,7 +49,7 @@
     '?>
     
     <!-- movie app js -->
-    <script src="movieAPI.js"></script>
+    <script src="movieapi.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             popularMovies();
