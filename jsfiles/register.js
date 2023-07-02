@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -20,6 +21,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
+const db = getFirestore();
 
 // Get the query parameters from the URL
 const queryString = window.location.search;
@@ -68,7 +70,19 @@ window.register = function (formData) {
   };
 
   createUserWithEmailAndPassword(auth, obj.email, obj.password)
-    .then(function (success) {
+    .then((obj) => {
+      // User creation successful
+      const user = obj.user;
+
+      // Save additional user details to Firestore
+      const userData = {
+        username: username,
+        email: email
+      };
+
+      return addDoc(collection(db, 'users'), userData);
+    }).then(() => {
+
       window.location.replace('index.php');
       alert("Congrats, Welcome to MidayaHub!");
     })
