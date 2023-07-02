@@ -103,11 +103,12 @@ body {
     transition: all 0.2s;
 }
 
-.login:hover {
+.login:hover, .signup:hover {
     background-color: #66659c;
 }
 
-.not-register, .not-register:active {
+.not-register, .not-register:active, .registered, .registered:active {
+    margin-top: 10px;
     padding: 0.1rem;
     font-size: 0.8rem;
     text-align: center;

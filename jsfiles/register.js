@@ -19,130 +19,83 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth()
+const auth = getAuth();
 
-// Set up our register function
-function register() {
-  // Get all our input fields
-  email = document.getElementById('email').value;
-  username = document.getElementById('username').value;
-  password = document.getElementById('password').value;
-  confirmpass = document.getElementById('confirmpass').value;
+// Get the query parameters from the URL
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
 
-  // Validate input fields
-  if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Please enter your email and password!!');
+// Sign Up function
+window.register = function (formData) {
+  event.preventDefault();
+
+  // Get the form data from the URL query parameters
+  const emailField = document.getElementById('email');
+  const usernameField = document.getElementById('username');
+  const passwordField = document.getElementById('password');
+  const confirmField = document.getElementById('confirmpass');
+
+  const email = emailField.value;
+  const username = usernameField.value;
+  const password = passwordField.value;
+  const confirm = confirmField.value;
+
+  // Validate the fields
+  if (email === "" || password === "" || confirm === "") {
+    alert('Please enter all fields.');
     return;
   }
-  if (validate_field(username) == false) {
-    alert('Please enter your full name!!');
-    return;
-  }
-  if (validate_confirm(password, confirmpass) == false) {
-    alert('Please confirm your password!!');
+
+  if (validate_email(email) === false) {
+    alert('Please enter a valid email!');
     return;
   }
 
-  // Move on with Auth
-  createUserWithEmailAndPassword(auth, email, password)
+  if (validate_password(password) === false) {
+    alert('Please enter a valid password!');
+    return;
+  }
+
+  if (validate_confirm(password, confirm) === false) {
+    alert('Password and confirm password do not match!');
+    return;
+  }
+
+  const obj = {
+    username: username,
+    email: email,
+    password: password,
+  };
+
+  createUserWithEmailAndPassword(auth, obj.email, obj.password)
     .then(function (success) {
-      // Declare user variable
-      var user = auth.currentUser;
-
-      // Add this user to Firebase Database
-      var database_ref = database.ref();
-
-      // Create User data
-      var user_data = {
-        email: email,
-        username: username,
-        last_login: Date.now()
-      };
-
-      // Push to Firebase Database
-      database_ref.child('users/' + user.uid).set(user_data);
-
-      // Done
-      alert('User Created!!');
       window.location.replace('index.php');
+      alert("Congrats, Welcome to MidayaHub!");
     })
     .catch(function (error) {
-      // Firebase will use this to alert of its errors
-      var error_code = error.code;
       var error_message = error.message;
 
-      // alert(error_message)
-      console.log(error.message);
-    })
-}
-
-// Set up our login function
-function login() {
-  // Get all our input fields
-  email = document.getElementById('email').value;
-  password = document.getElementById('password').value;
-
-  // Validate input fields
-  if (validate_email(email) == false || validate_password(password) == false) {
-    alert('Email or Password is Outta Line!!');
-    return;
-  }
-
-  signInWithEmailAndPassword(email, password)
-    .then(function () {
-      // Declare user variable
-      var user = auth.currentUser;
-
-      // Add this user to Firebase Database
-      var database_ref = database.ref();
-
-      // Create User data
-      var user_data = {
-        last_login: Date.now()
-      };
-
-      // Push to Firebase Database
-      database_ref.child('users/' + user.uid).update(user_data);
-
-      // Done
-      alert('User Logged In!!');
-
-    })
-    .catch(function (error) {
-      // Firebase will use this to alert of its errors
-      var error_code = error.code;
-      var error_message = error.message;
-
-      alert(error_message);
-    })
+      if (error.code == "auth/email-already-in-use") {
+        alert("Login Error: This email is already registered, please use another email.");
+      }
+      else if (error.code == "auth/weak-password") {
+        alert("Login Error: Your password is too weak to protect your account.");
+      } else {
+        alert("Login Error: " + error_message);
+      }
+    });
 }
 
 // Validate Functions
 function validate_email(email) {
-  expression = /^[^@]+@\w+(\.\w+)+\w$/
-  if (expression.test(email) == true) {
-    // Email is valid
-    return true;
-  } else {
-    // Email is not valid
-    return false;
-  }
+  var expression = /^[^@]+@\w+(\.\w+)+\w$/;
+  return expression.test(email);
 }
 
 function validate_password(password) {
-  // Firebase only accepts lengths greater than 6
-  if (password < 6) {
-    return false;
-  } else {
-    return true;
-  }
+  return password.length >= 6;
 }
 
-function validate_confirm(password, confirmpass) {
-  // Firebase only accepts lengths greater than 6
-  if (password != confirmpass) {
-    return false;
-  } else {
-    return true;
-  }
+function validate_confirm(password, confirm) {
+  return password === confirm;
 }

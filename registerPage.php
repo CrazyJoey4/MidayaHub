@@ -18,7 +18,7 @@
 
 <body>
     <div class="signup-block">
-        <form class="signup-form" onsubmit="login(event)">
+        <form class="signup-form" id="signup-form" onsubmit="register(event)">
             <div class="container">
                 <h1>- Midaya<span>Hub -</span></h1>
                 <h2 style="text-transform: uppercase;">Sign Up</h2>
@@ -41,22 +41,29 @@
                 </div>
 
                 <div class="InputText">
-                    <input type="confirmpass" name="confirmpass" id="confirmpass" required>
+                    <input type="password" name="confirmpass" id="confirmpass" required>
                     <label> Confirm Password</label>
                 </div>
 
                 <div class="signup-btn">
-                    <input type="submit" name="Sign" id="Sign" value="Sign Up" class="signup" onclick="register()">
+                    <input type="submit" name="Sign" id="Sign" value="Sign Up" class="signup" onclick="register(event)">
                 </div>
 
-                <div class="member">
-                    Already Registered?<a href="./index.php">Login Here!</a>
+                <div class="registered">
+                    Already Registered? <a href="./index.php">Login Here!</a>
                 </div>
             </div>
         </form>
     </div>
 </body>
 <script type="module" src="jsfiles/register.js"></script>
-
+<script>
+    document.getElementById('signup-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var form = document.getElementById('signup-form');
+        var formData = new FormData(form);
+        register(formData);
+    });
+</script>
 
 </html>

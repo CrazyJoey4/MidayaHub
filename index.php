@@ -10,13 +10,15 @@
 
     <link rel="icon" href="media/login-icon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css" integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css"
+        integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="cssfiles/sign.css">
 </head>
 
 <body>
     <div class="login-block">
-        <form method="post" action="signinCheck.php" class="login-form">
+        <form class="login-form" onsubmit="login(event)">
             <div class="container">
                 <h1>- Midaya<span>Hub -</span></h1>
                 <h2 style="text-transform: uppercase;">Sign In</h2>
@@ -27,8 +29,8 @@
             <div class="wrap">
                 <form>
                     <div class="InputText">
-                        <input type="text" name="username" id="username" required>
-                        <label>Username</label>
+                        <input type="text" name="email" id="email" required>
+                        <label>Email</label>
                     </div>
                     <div class="InputText">
                         <input type="password" name="password" id="password" required>
@@ -36,7 +38,7 @@
                     </div>
 
                     <div class="login-btn">
-                        <input type="submit" name="Sign" id="Sign" value="Sign In" class="login">
+                        <input type="submit" name="Sign" id="Sign" value="Sign In" class="login" onclick="login(event)">
                     </div>
 
                     <div class="not-register">
@@ -47,5 +49,6 @@
         </form>
     </div>
 </body>
+<script type="module" src="jsfiles/login.js"></script>
 
 </html>
