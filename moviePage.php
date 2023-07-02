@@ -48,7 +48,7 @@
     ' ?>
 
     <!-- movie app js -->
-    <script src="movieapi.js"></script>
+    <script src="jsfiles/movieapi.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             popularMovies();

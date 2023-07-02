@@ -31,7 +31,7 @@
     '; ?>
 
     <!-- news app js -->
-    <script src="newsapi.js"></script>
+    <script src="jsfiles/newsapi.js"></script>
 </body>
 
 </html>
