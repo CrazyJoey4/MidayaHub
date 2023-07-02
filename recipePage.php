@@ -37,7 +37,7 @@
     '; ?>
 
     <!-- Script -->
-    <script src="jsfiles/recipe.js"></script>
+    <script src="jsfiles/recipeapi.js"></script>
 </body>
 
 </html>
