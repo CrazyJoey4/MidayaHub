@@ -43,11 +43,10 @@
             </div>
         </div>
 
-        
         <div class="main-content" id="main-content"></div>
     </div>
-    '?>
-    
+    ' ?>
+
     <!-- movie app js -->
     <script src="movieapi.js"></script>
     <script>

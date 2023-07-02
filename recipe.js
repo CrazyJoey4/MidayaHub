@@ -1,11 +1,11 @@
 //Initial References
-let result = document.getElementById("result");
+let resultCon = document.getElementById("result-container");
 let searchForm = document.getElementById("search-form");
 let url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 searchForm.addEventListener("submit", async(e) => {
     e.preventDefault()
-    let userInp = document.getElementById("user-inp").value;
+    let userInp = document.getElementById("recipe-search-box").value;
     if (userInp.length == 0) {
         alert("Search Term Cannot be Blank");
     } 
@@ -32,7 +32,8 @@ searchForm.addEventListener("submit", async(e) => {
                 }
             }
             console.log(ingredients);
-            result.innerHTML = `
+            resultCon.innerHTML = `
+                <div class="result">
                 <img src=${myMeal.strMealThumb}>
                 <div class="details">
                     <h2>${myMeal.strMeal}</h2>
@@ -41,6 +42,7 @@ searchForm.addEventListener("submit", async(e) => {
                 <div id="ingredient-con"></div>
                 <div id="recipe">
                     <pre id="instructions">${myMeal.strInstructions}</pre>
+                </div>
                 </div>
                 `;
             let ingredientCon = document.getElementById("ingredient-con");
