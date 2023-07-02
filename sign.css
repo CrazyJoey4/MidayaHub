@@ -15,12 +15,12 @@ body {
 
 .login-block, .signup-block {
     background: linear-gradient(#2d2f30, #3f429e, #7d83f2);
-    margin-top: 4rem;
+    margin-top: 3rem;
     margin-bottom: auto;
-    margin-left: 30rem;
-    margin-right: 30rem;
+    margin-left: 32rem;
+    margin-right: 32rem;
     border: 0.1rem solid white;
-    border-radius: 0.6rem;
+    border-radius: 0.5rem;
 }
 
 .container {
@@ -47,7 +47,7 @@ body {
     height: 2.2rem;
     width: 100%;
     position: relative;
-    margin-bottom: 45px;
+    margin-bottom: 3rem;
 }
 
 .wrap .InputText input {
@@ -55,23 +55,23 @@ body {
     width: 100%;
     background: transparent;
     border: none;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     border-bottom: 0.1rem solid #fff;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1rem;
     outline: none;
 }
 
 .wrap .InputText input:focus~label,
 .wrap .InputText input:valid~label {
-    transform: translateY(-2rem);
+    transform: translateY(-1.6rem);
     transition: all 0.3s ease;
     color: #fff;
     outline: none;
 }
 
 .wrap .InputText label {
-    font-size: 1.2rem;
+    font-size: 1rem;
     position: absolute;
     bottom: 0.5rem;
     left: 0;
@@ -80,24 +80,23 @@ body {
 }
 
 .login-btn, .signup-btn {
-    padding-top: 2rem;
+    padding-top: 1.6rem;
     text-align: center;
 }
 
 .login, .signup {
     outline: none;
-    padding: 0.2vw;
     border-radius: 0.1rem;
     border: none;
     background-color: #d1d5f2;
     color: #0f0c30;
     box-shadow: 0 0 1.4rem rgba(0, 0, 0, 0.2);
     text-align: center;
-    font-size: 1.2rem;
-    padding: 0.6rem 8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.6rem 6rem;
     text-align: center;
     text-transform: uppercase;
-    font-weight: bold;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s;
@@ -105,4 +104,10 @@ body {
 
 .login:hover {
     background-color: #66659c;
+}
+
+.not-register, .not-register:active {
+    padding: 0.1rem;
+    font-size: 0.8rem;
+    text-align: center;
 }

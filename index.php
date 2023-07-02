@@ -8,12 +8,10 @@
 
     <title> Sign In </title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css"
-        integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="media/login-icon.png">
-    <link rel="stylesheet" href="sign.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css" integrity="sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./sign.css">
 </head>
 
 <body>
@@ -24,19 +22,19 @@
                 <h2 style="text-transform: uppercase;">Sign In</h2>
             </div>
 
-            <br/>
+            <br />
 
             <div class="wrap">
                 <form>
                     <div class="InputText">
-                        <input type="text" name = "User_ID" id = "User_ID" required>
-                        <label>ID</label>
+                        <input type="text" name="username" id="username" required>
+                        <label>Username</label>
                     </div>
                     <div class="InputText">
-                        <input type="password" name="User_pwd" id="User_pwd" required>
+                        <input type="password" name="password" id="password" required>
                         <label>Password</label>
                     </div>
-                    
+
                     <div class="login-btn">
                         <input type="submit" name="Sign" id="Sign" value="Sign In" class="login">
                     </div>
@@ -45,8 +43,9 @@
                         <a href="registerPage.php">Do not have an account yet?</a>
                     </div>
                 </form>
-            </div>	
+            </div>
         </form>
-    </div>    
+    </div>
 </body>
+
 </html>
