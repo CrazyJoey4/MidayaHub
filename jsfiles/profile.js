@@ -59,33 +59,38 @@ onAuthStateChanged(auth, (user) => {
 });
 
 // Update Details function
-window.update = function (formData) {
+window.update = function (event) {
     event.preventDefault();
 
-    // Get the reference to the user document in Firestore
-    const userDocRef = doc(db, 'users', userId);
     const username = document.getElementById('username').value;
 
+    // Get the reference to the user document in Firestore
+    const usersCollectionRef = collection(db, 'users');
+    const q = query(usersCollectionRef, where('uid', '==', userId));
+
     // Check if the document exists before updating
-    getDoc(userDocRef)
-        .then((docSnap) => {
-            if (docSnap.exists()) {
-                // Document exists, update the username field
-                return updateDoc(userDocRef, { username: username });
+    getDocs(q)
+        .then((querySnapshot) => {
+            if (!querySnapshot.empty) {
+                // User document found
+                querySnapshot.forEach((doc) => {
+                    const userDocRef = doc.ref;
+                    // Update the username field
+                    return updateDoc(userDocRef, { username: username });
+                });
             } else {
-                // Document doesn't exist, handle the error
-                console.log('User document does not exist');
+                alert('User document does not exist');
                 throw new Error('User document does not exist');
             }
         })
         .then(() => {
             // Update successful
-            console.log('Username updated successfully');
+            alert('Username updated successfully');
             // Handle any additional actions or UI updates
         })
         .catch((error) => {
             // Error occurred during update
-            console.log('Error updating username:', error);
+            alert('Error updating username:', error);
             // Handle the error and display an appropriate message to the user
         });
 }
