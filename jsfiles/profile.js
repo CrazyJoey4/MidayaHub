@@ -2,8 +2,9 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import {
     getAuth,
     onAuthStateChanged,
+    deleteUser,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
-import { getFirestore, collection, getDocs, query, where, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, query, where, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -92,4 +93,49 @@ window.update = function (event) {
             alert('Error updating username:', error);
             // Handle the error and display an appropriate message to the user
         });
+}
+
+// For Delete Account
+window.delacc = function () {
+    const confirmDelete = confirm("Are you sure you want to delete your account?");
+
+    // User confirmed, proceed with delete process
+    if (confirmDelete) {
+        // Get the reference to the user document in Firestore
+        const usersCollectionRef = collection(db, 'users');
+        const q = query(usersCollectionRef, where('uid', '==', userId));
+
+        // Check if the document exists before updating
+        getDocs(q)
+            .then((querySnapshot) => {
+                if (!querySnapshot.empty) {
+                    // User document found
+                    querySnapshot.forEach((doc) => {
+                        const userDocRef = doc.ref;
+                        // Delete the user's authentication account
+                        deleteDoc(userDocRef)
+                            .then(() => {
+                                // User account deleted successfully
+                                // Delete the user document in Firestore
+                                return deleteUser(auth.currentUser);
+                            })
+                            .then(() => {
+                                // Account deletion successful
+                                alert('Account deleted successfully');
+                                window.location.replace('index.php');
+                            })
+                            .catch((error) => {
+                                // Error occurred during deletion
+                                alert('Error deleting account:', error);
+                            });
+                    });
+                } else {
+                    alert('User document does not exist');
+                    throw new Error('User document does not exist');
+                }
+            })
+            .catch((error) => {
+                console.log('Error fetching user profile:', error);
+            });
+    }
 }

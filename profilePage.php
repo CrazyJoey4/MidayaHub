@@ -19,7 +19,7 @@
 
 <body>
     <div class="inline">
-        <input type="submit" name="Del" id="delAcc" value="Delete Account" class="delacc">
+        <input type="submit" name="Del" id="delAcc" value="Delete Account" class="delacc" onclick="delacc()">
         <input type="submit" name="Sign" id="signOut" value="Sign Out" class="signout">
     </div>
     <div class="profile-block">
