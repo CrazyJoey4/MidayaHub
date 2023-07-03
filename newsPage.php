@@ -22,6 +22,10 @@
                     <input type="text" class="form-control" placeholder="Search news keyword here..." id="news-search-box">
                 </div>
             </form>
+
+            <div class="bmpage-movie">
+                <a href="bookmarkPage.php"><span class="fa fa-star"></span> Bookmarks</a>
+            </div>
         </div>
 
         <br/>
