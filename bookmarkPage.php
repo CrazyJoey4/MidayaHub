@@ -26,7 +26,7 @@
     </div>
     ' ?>
 
-    <script type="module" src="jsfiles/bookmark.js"></script>
+    <script type="module" src="jsfiles/movieBookmark.js"></script>
 
     <script type="module" src="jsfiles/auth.js">
         window.addEventListener('DOMContentLoaded', function () {
