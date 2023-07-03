@@ -29,12 +29,17 @@
 
             <div class="profile-wrap">
                 <div class="InputText">
-                    <label>Username</label><br/>
+                    <label>User ID:</label>
+                    <span id="userId"></span>
+                </div>
+
+                <div class="InputText">
+                    <label>Username</label><br />
                     <input type="text" name="username" id="username">
                 </div>
 
                 <div class="InputText">
-                    <label>Email</label><br/>
+                    <label>Email</label><br />
                     <input type="text" name="email" id="email">
                 </div>
 
@@ -47,12 +52,12 @@
 </body>
 
 <script type="module" src="jsfiles/profile.js"></script>
-<script type="module" src="jsfiles/logout.js"></script>
+<script type="module" src="jsfiles/auth.js"></script>
 
 <script>
-  window.addEventListener('DOMContentLoaded', function() {
-    displayProfile();
-  });
+    window.addEventListener('DOMContentLoaded', function() {
+        displayProfile();
+    });
 </script>
 
 </html>

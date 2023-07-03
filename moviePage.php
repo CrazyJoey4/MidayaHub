@@ -48,12 +48,18 @@
     ' ?>
 
     <!-- movie app js -->
-    <script src="jsfiles/movieapi.js"></script>
-    <script>
+    <script src="jsfiles/movieapi.js">
         document.addEventListener("DOMContentLoaded", function() {
             popularMovies();
         });
     </script>
+
+    <script type="module" src="jsfiles/auth.js">
+        window.addEventListener('DOMContentLoaded', function() {
+            checkLoggedIn();
+        });
+    </script>
+
 </body>
 
 </html>

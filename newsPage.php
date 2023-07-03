@@ -31,6 +31,7 @@
     '; ?>
 
     <!-- news app js -->
+    <script type="module" src="jsfiles/auth.js"></script>
     <script src="jsfiles/newsapi.js">
         document.addEventListener("DOMContentLoaded", function() {
             loadNews("all");

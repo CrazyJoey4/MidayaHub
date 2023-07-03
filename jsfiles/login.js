@@ -51,11 +51,11 @@ window.login = function (event) {
   }
 
   signInWithEmailAndPassword(auth, email, password)
-    .then(function (success) {
-      alert("Logged in successfully");
-
+    .then(function (success) {      
       var uid = success.user.uid;
       console.log(uid);
+
+      localStorage.setItem('userId', uid);
 
       window.location.replace('moviePage.php');
     })

@@ -76,6 +76,7 @@ window.register = function (formData) {
 
       // Save additional user details to Firestore
       const userData = {
+        uid: user.uid,
         username: username,
         email: email
       };

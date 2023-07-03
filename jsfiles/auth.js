@@ -22,15 +22,28 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
+// Check if the user is logged in
+function checkLoggedIn() {
+    var userId = localStorage.getItem('userId');
+    console.log(userId);
+    if (!userId) {
+      // User is not logged in, redirect to login page or perform other actions
+      window.location.replace('index.php');
+    }
+  }  
+
+// For Sign Out
 const signout = document.getElementById('signOut');
 
 signout.addEventListener('click', () => {
-    //signOut() is a built in firebase function responsible for signing a user out
-    auth.signOut()
-        .then(() => {
-            window.location.assign('index.php');
-        })
-        .catch(error => {
-            console.error(error);
-        })
-})
+    if (confirm("Are you sure you want to log out?")) {
+        // User confirmed, proceed with logout
+        auth.signOut()
+            .then(() => {
+                window.location.assign('index.php');
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }
+});

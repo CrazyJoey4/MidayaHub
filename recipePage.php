@@ -38,6 +38,12 @@
 
     <!-- Script -->
     <script src="jsfiles/recipeapi.js"></script>
+    <script type="module" src="jsfiles/auth.js">
+        window.addEventListener('DOMContentLoaded', function() {
+            checkLoggedIn();
+        });
+    </script>
+
 </body>
 
 </html>
