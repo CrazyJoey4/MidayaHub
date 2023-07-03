@@ -18,7 +18,7 @@
             <div class="logo">
                 <div class="container">
                     <ul>
-                        <li>- Midaya<span>Hub -</span></li>
+                        <li><a href="moviePage.php">- Midaya<span>Hub -</span></a></li>
                         <li style="float:right"><a href="profilePage.php"><span class="fa fa-user"></span></a></li>
                     </ul>
                 </div>
