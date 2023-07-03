@@ -35,7 +35,7 @@ function displayPopularMovies(movies) {
         if (movies[idx].Poster != "N/A") {
             moviePoster = movies[idx].Poster;
         } else {
-            moviePoster = "media/smiley.jpg";
+            moviePoster = "media/smiley.png";
         }
         movieCard.innerHTML = `
         <div class="movie-card-thumbnail">
@@ -82,7 +82,7 @@ function displayMovieList(movies) {
             moviePoster = movies[idx].Poster;
         }
         else {
-            moviePoster = "media/smiley.jpg";
+            moviePoster = "media/smiley.png";
         }
         movieListItem.innerHTML = `
         <div class="search-item-thumbnail">
@@ -116,7 +116,7 @@ function loadMovieDetails() {
 function displayMovieDetails(details) {
     resultGrid.innerHTML = `
     <div class="movie-poster">
-        <img src="${(details.Poster != "N/A" ? details.Poster : "media/smiley.jpg")}" alt="movie-poster">
+        <img src="${(details.Poster != "N/A" ? details.Poster : "media/smiley.png")}" alt="movie-poster">
     </div>
     <div class="movie-info">
         <h3 class="movie-title">${details.Title}</h3>

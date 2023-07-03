@@ -1,5 +1,5 @@
 :root {
-    --md-dark-color: #1d1d1d;
+    --md-dark-color: #262626;
     --dark-color: #171717;
     --light-dark-color: #2d2f30;
     --dark-purple-color: #3f429e;
@@ -104,7 +104,7 @@ a {
 
 .wrap {
     min-height: 1000px;
-    background-color: var(--md-dark-color);
+    background-color: var(--dark-color);
 }
 
 img {

@@ -9,49 +9,41 @@
 }
 
 body {
-    background-color: var(--light-dark-color);
-    font-family: "Poppins", sans-serif;
+    background-color: var(--dark-color);
 }
 
-.login-block, .signup-block {
-    background: linear-gradient(#2d2f30, #3f429e, #7d83f2);
-    margin-top: 3rem;
+.profile-block {
+    background: var(--dark-purple-color);
+    margin-top: 2rem;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
-    border: 0.1rem solid white;
-    border-radius: 0.5rem;
+    width: 50%;
+    border: none;
 }
 
-.container {
+.container h2 {
     padding: 1rem;
-}
-
-.container h1, .container h2 {
     font-weight: bold;
-    color: #fff;
+    color: #dcdcff;
     text-align: center;
 }
 
-.container span {
-    color: var(--purple-color);
+.profile-wrap {
+    background-color: var(--light-dark-color);
+    padding: 5rem 4rem 2rem 4rem;
 }
 
-.wrap {
-    padding: 2rem 3rem;
-}
-
-.wrap .InputText {
+.profile-wrap .InputText {
     background: transparent;
     text-align: center;
     height: 2.2rem;
     width: 100%;
     position: relative;
-    margin-bottom: 3rem;
+    margin-bottom: 3.4rem;
 }
 
-.wrap .InputText input {
+.profile-wrap .InputText input {
     height: 100%;
     width: 100%;
     background: transparent;
@@ -63,29 +55,22 @@ body {
     outline: none;
 }
 
-.wrap .InputText input:focus~label,
-.wrap .InputText input:valid~label {
-    transform: translateY(-1.6rem);
-    transition: all 0.3s ease;
-    color: #fff;
-    outline: none;
-}
 
-.wrap .InputText label {
+
+.profile-wrap .InputText label {
     font-size: 1rem;
     position: absolute;
-    bottom: 0.5rem;
     left: 0;
     color: #c0d8f6;
     pointer-events: none;
 }
 
-.login-btn, .signup-btn {
+.update-btn {
     padding-top: 1.6rem;
     text-align: center;
 }
 
-.login, .signup {
+.update {
     outline: none;
     border-radius: 0.1rem;
     border: none;
@@ -103,13 +88,29 @@ body {
     transition: all 0.2s;
 }
 
-.login:hover, .signup:hover {
+.update:hover, .signout:hover {
     background-color: #66659c;
 }
 
-.not-register, .not-register:active, .registered, .registered:active {
-    margin-top: 10px;
-    padding: 0.1rem;
-    font-size: 0.8rem;
+.logout {
+    padding: 1.2rem 1rem 1rem 0;
+    text-align: right;
+}
+
+.signout {
+    outline: none;
+    border-radius: 0.1rem;
+    border: none;
+    background-color: #8289b7;
+    color: #0f0c30;
+    box-shadow: 0 0 1.4rem rgba(0, 0, 0, 0.2);
     text-align: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0.4rem 0.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
 }
