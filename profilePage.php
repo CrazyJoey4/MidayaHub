@@ -19,7 +19,7 @@
 
 <body>
     <div class="logout">
-        <input type="submit" name="Sign" id="Sign" value="Sign Out" class="signout" onclick="logout()">
+        <input type="submit" name="Sign" id="signOut" value="Sign Out" class="signout">
     </div>
     <div class="profile-block">
         <form class="profile-form" id="profile-form" onsubmit="update(event)">
@@ -29,32 +29,30 @@
 
             <div class="profile-wrap">
                 <div class="InputText">
-                    <label>Username</label>
-                    <input type="text" name="username" id="username" required>
+                    <label>Username</label><br/>
+                    <input type="text" name="username" id="username">
                 </div>
 
                 <div class="InputText">
-                    <label>Email</label>
-                    <input type="text" name="email" id="email" required>
+                    <label>Email</label><br/>
+                    <input type="text" name="email" id="email">
                 </div>
 
                 <div class="update-btn">
-                    <input type="submit" name="Update" id="Update" value="Update Profile" class="update" onclick="register(event)">
+                    <input type="submit" name="Update" id="Update" value="Update Profile" class="update" onclick="update(event)">
                 </div>
             </div>
         </form>
     </div>
 </body>
 
-<script type="module" src="jsfiles/update.js"></script>
+<script type="module" src="jsfiles/profile.js"></script>
 <script type="module" src="jsfiles/logout.js"></script>
+
 <script>
-    document.getElementById('profile-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        var form = document.getElementById('profile-form');
-        var formData = new FormData(form);
-        register(formData);
-    });
+  window.addEventListener('DOMContentLoaded', function() {
+    displayProfile();
+  });
 </script>
 
 </html>
