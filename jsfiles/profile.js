@@ -62,11 +62,9 @@ onAuthStateChanged(auth, (user) => {
 window.update = function (formData) {
     event.preventDefault();
 
-    // Get the user ID from localStorage
-    const userId = localStorage.getItem('userId');
-
     // Get the reference to the user document in Firestore
     const userDocRef = doc(db, 'users', userId);
+    const username = document.getElementById('username').value;
 
     // Check if the document exists before updating
     getDoc(userDocRef)
