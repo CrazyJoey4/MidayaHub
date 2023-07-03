@@ -1,9 +1,12 @@
 // API Key
 const apikey = '165a04ca7dd748cc89aa37d46023a3e2';
 
+// Request Parameters
+const pageSize = 24;
+
 // Retrieve the news from API
 async function loadNews(title) {
-    const url = `https://newsapi.org/v2/everything?q=${title}&apikey=${apikey}`;
+    const url = `https://newsapi.org/v2/everything?q=${title}&pageSize=${pageSize}&sortBy=&apikey=${apikey}`;
     const res = await fetch(`${url}`);
     const data = await res.json();
     return data
