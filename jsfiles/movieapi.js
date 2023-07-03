@@ -2,6 +2,7 @@ const movieSearchBox = document.getElementById('movie-search-box');
 const searchList = document.getElementById('search-list');
 const resultGrid = document.getElementById('result-grid');
 const mainContent = document.getElementById('main-content');
+const bookmarkbtn = document.getElementById('bookmark-btn');
 
 // load movie from API
 const apikey = 'c8ec4741';
@@ -19,7 +20,7 @@ async function popularMovies() {
     const res = await fetch(URL);
     const data = await res.json();
 
-    if (data.Response == "True") {        
+    if (data.Response == "True") {
         const movies = data.Search.slice(0, 8);
         displayPopularMovies(movies);
     }
@@ -114,11 +115,14 @@ function loadMovieDetails() {
 }
 
 function displayMovieDetails(details) {
+    bookmarkbtn.classList.remove('hide-bookmark-button');
+
     resultGrid.innerHTML = `
     <div class="movie-poster">
         <img src="${(details.Poster != "N/A" ? details.Poster : "media/smiley.png")}" alt="movie-poster">
     </div>
     <div class="movie-info">
+        <h3 class="movie-id">${details.imdbID}</h3>
         <h3 class="movie-title">${details.Title}</h3>
         <ul class="movie-detail-info">
             <li class="year">Year: ${details.Year}</li>

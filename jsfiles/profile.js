@@ -1,9 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import {
-    getAuth,
-    onAuthStateChanged,
-    deleteUser,
-} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+import { getAuth, onAuthStateChanged, deleteUser } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
 import { getFirestore, collection, getDocs, query, where, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 // Firebase configuration

@@ -29,6 +29,10 @@
 
                 </div>
             </div>
+
+            <div class="bmpage-movie">
+                <a href="bookmarkPage.php"><span class="fa fa-star"></span> Bookmarks</a>
+            </div>
         </div>
 
         <br/>
@@ -38,30 +42,35 @@
             <div class="result-container">
                 <div class="result-grid" id="result-grid">
                     <!-- Movie information here -->
-                    <!-- <div class="movie-poster"></div> -->
                 </div>
             </div>
         </div>
 
         <div class="main-content" id="main-content"></div>
+
+        <div class="bookmark-btn hide-bookmark-button" id="bookmark-btn">
+            <button><span class="fa fa-star"></span></button>
+        </div>
     </div>
     ' ?>
+
+
 
     <!-- movie app js -->
     <script src="jsfiles/movieapi.js"></script>
 
+    <script type="module" src="jsfiles/bookmark.js"></script>
     <script type="module" src="jsfiles/auth.js">
-        window.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('DOMContentLoaded', function () {
             checkLoggedIn();
         });
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             popularMovies();
         });
     </script>
-
 </body>
 
 </html>

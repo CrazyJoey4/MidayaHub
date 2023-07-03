@@ -63,6 +63,42 @@ a {
     background-color: var(--light-dark-color);
 }
 
+.bookmark-btn button {
+    padding: 20px;
+    font-size: 30px;
+    border: none;
+    color: var(--purple-color);
+    background-color: #fff;
+    border-radius: 51%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    transition: 0.5s;
+}
+
+.bookmark-btn button:hover {
+    color: #fff;
+    background-color: var(--purple-color);
+}
+
+.remove-button {
+    padding: 5px 25px;
+    font-size: 22px;
+    border: none;
+    color: #fff;
+    background-color: var(--dark-purple-color);
+    border-radius: 10px;
+
+    transition: 0.5s;
+}
+
+.remove-button:hover {
+    color: var(--dark-purple-color);
+    background-color: #fff;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
 /* Navigation Bar */
 .topnav {
     background-color: var(--md-dark-color);
@@ -118,7 +154,7 @@ img {
     height: 6rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .search-element {
@@ -145,6 +181,21 @@ img {
     outline: none;
     color: var(--light-dark-color);
     width: 45rem;
+}
+
+.bmpage-movie a {
+    padding: 10px;
+    font-size: 25px;
+    border: none;
+    color: var(--purple-color);
+    border-radius: 5px;
+
+    transition: 0.5s;
+}
+
+.bmpage-movie a:hover {
+    color: #fff;
+    background-color: var(--purple-color);
 }
 
 /* News Page */
@@ -294,6 +345,18 @@ main {
     display: none !important;
 }
 
+.hide-bookmark-button {
+    display: none !important;
+}
+
+.hide-movie-details {
+    display: none !important;
+}
+
+.hide-back-button {
+    display: none;
+}
+
 /* Movie Page */
 .main-content {
     display: flex;
@@ -409,6 +472,38 @@ main {
 .movie-info .awards i {
     color: var(--purple-color);
     margin: 1rem 0.7rem 0 0;
+}
+
+/* Bookmark Result */
+.bookmark.container {
+    padding-top: 30px;
+}
+
+.bookmark-list {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.back-button {
+    font-size: 20px;
+    padding: 5px 30px;
+    border: none;
+    color: #fff;
+    background-color: var(--purple-color);
+    border-radius: 5px;
+    position: relative;
+    top: 15px;
+    left: 30px;
+
+    transition: 0.5s;
+}
+
+.back-button:hover {
+    color: var(--dark-purple-color);
+    background-color: #fff;
 }
 
 /* Recipe Result */
@@ -549,9 +644,11 @@ main {
         margin-bottom: 0;
     }
 
-    .result-grid {
+    .result-grid,
+    .movie-details {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        align-items: center;
     }
 
     .movie-info {
