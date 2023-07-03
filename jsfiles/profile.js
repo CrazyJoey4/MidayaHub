@@ -22,7 +22,6 @@ const auth = getAuth();
 const db = getFirestore(app);
 
 var userId = localStorage.getItem('userId');
-document.getElementById('userId').textContent = userId;
 
 // Display User Information
 window.displayProfile = function () {

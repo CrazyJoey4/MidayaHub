@@ -17,7 +17,7 @@ function displayNews(details) {
         if (details[i].urlToImage) {
             mainHTML += `
             <div class="news-card">
-                <a href=${details[i].url} style="color:#fff">
+                <a href=${details[i].url} style="color:#fff" target="_blank">
                 <img src=${details[i].urlToImage} lazy="loading"/>
                 <h4>${details[i].title}</h4>
                 <div class="publisherdate">
@@ -28,6 +28,7 @@ function displayNews(details) {
                 <div class="description">
                     ${details[i].description}
                 </div>
+                </a>
             </div>`
         }
     }

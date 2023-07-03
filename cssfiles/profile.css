@@ -55,8 +55,6 @@ body {
     outline: none;
 }
 
-
-
 .profile-wrap .InputText label {
     font-size: 1rem;
     position: absolute;
@@ -88,22 +86,24 @@ body {
     transition: all 0.2s;
 }
 
-.update:hover, .signout:hover {
+.update:hover, .signout:hover, .delacc:hover {
     background-color: #66659c;
 }
 
-.logout {
-    padding: 1.2rem 1rem 1rem 0;
+.inline {
+    display: block;
+    padding: 1.2rem 0 1rem 0;
     text-align: right;
 }
 
-.signout {
+.signout, .delacc {
     outline: none;
     border-radius: 0.1rem;
     border: none;
     background-color: #8289b7;
     color: #0f0c30;
     box-shadow: 0 0 1.4rem rgba(0, 0, 0, 0.2);
+    margin-right: 0.6rem;
     text-align: center;
     font-size: 0.8rem;
     font-weight: bold;

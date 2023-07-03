@@ -18,7 +18,8 @@
 </head>
 
 <body>
-    <div class="logout">
+    <div class="inline">
+        <input type="submit" name="Del" id="delAcc" value="Delete Account" class="delacc">
         <input type="submit" name="Sign" id="signOut" value="Sign Out" class="signout">
     </div>
     <div class="profile-block">
@@ -28,11 +29,6 @@
             </div>
 
             <div class="profile-wrap">
-                <div class="InputText">
-                    <label>User ID:</label>
-                    <span id="userId"></span>
-                </div>
-
                 <div class="InputText">
                     <label>Username</label><br />
                     <input type="text" name="username" id="username">
