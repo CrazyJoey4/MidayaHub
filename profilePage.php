@@ -40,7 +40,7 @@
 
                 <div class="InputText">
                     <label>Email</label><br />
-                    <input type="text" name="email" id="email">
+                    <input type="text" name="email" id="email" disabled>
                 </div>
 
                 <div class="update-btn">
@@ -57,6 +57,14 @@
 <script>
     window.addEventListener('DOMContentLoaded', function() {
         displayProfile();
+    });
+</script>
+<script>
+    document.getElementById('profile-form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var username = document.getElementById('username');
+        var formData = new FormData(username);
+        update(formData);
     });
 </script>
 
