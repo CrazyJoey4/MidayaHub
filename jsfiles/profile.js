@@ -3,7 +3,7 @@ import {
     getAuth,
     onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
-import { getFirestore, doc, collection, getDocs, where } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -26,9 +26,9 @@ document.getElementById('userId').textContent = userId;
 
 window.displayProfile = function () {
     const usersCollectionRef = collection(db, 'users');
-    const query = where('uid', '==', userId);
+    const q = query(usersCollectionRef, where('uid', '==', userId));
 
-    getDocs(query)
+    getDocs(q)
         .then((querySnapshot) => {
             if (!querySnapshot.empty) {
                 // User document found
