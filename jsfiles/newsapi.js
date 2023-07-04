@@ -17,11 +17,14 @@ loadNews("all").then(data => displayNews(data.articles))
 function displayNews(details) {
     let mainHTML = ''
     for (let i = 0; i < details.length; i++) {
-        if (details[i].urlToImage) {
+        if (details[i].title) {
             mainHTML += `
             <div class="news-card">
+                <div class="news-bmbtn" id="news-bmbtn">
+                    <button id="news-bookmark-btn"><span class="fa fa-star"></span></button>
+                </div>
+                <img src=${details[i].urlToImage} lazy="loading"/>
                 <a href=${details[i].url} style="color:#fff" target="_blank">
-                <img src=${details[i].urlToImage} lazy="loading"/>                
                 <h4>${details[i].title}</h4>
                 <div class="publisherdate">
                     <p>${details[i].source.name}</p>
@@ -32,9 +35,6 @@ function displayNews(details) {
                     ${details[i].description}
                 </div>
                 </a>
-                <div class="news-bookmark-btn" id="news-bookmark-btn">
-                    <button><span class="fa fa-star"></span></button>
-                </div>
             </div>
             `
         }

@@ -82,12 +82,10 @@ window.update = function (event) {
         .then(() => {
             // Update successful
             alert('Username updated successfully');
-            // Handle any additional actions or UI updates
         })
         .catch((error) => {
             // Error occurred during update
             alert('Error updating username:', error);
-            // Handle the error and display an appropriate message to the user
         });
 }
 
@@ -111,13 +109,12 @@ window.delacc = function () {
                         // Delete the user's authentication account
                         deleteDoc(userDocRef)
                             .then(() => {
-                                // User account deleted successfully
                                 // Delete the user document in Firestore
                                 return deleteUser(auth.currentUser);
                             })
                             .then(() => {
                                 // Account deletion successful
-                                alert('Account deleted successfully');
+                                alert('Account deleted successfully. Bye bye!');
                                 window.location.replace('index.php');
                             })
                             .catch((error) => {
@@ -126,7 +123,7 @@ window.delacc = function () {
                             });
                     });
                 } else {
-                    alert('User document does not exist');
+                    console.log('User document does not exist');
                     throw new Error('User document does not exist');
                 }
             })

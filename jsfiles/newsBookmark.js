@@ -44,7 +44,7 @@ function removeBookmarkFromUser(userRef, newsId) {
 }
 
 // Add event listeners to bookmark buttons
-const bookmarkButtons = document.querySelectorAll('.bookmark-button');
+const bookmarkButtons = document.querySelectorAll('.news-bookmark-button');
 bookmarkButtons.forEach((button, index) => {
   button.addEventListener('click', () => {
     const newsId = `news-${index}`;
