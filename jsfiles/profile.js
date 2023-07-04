@@ -25,12 +25,14 @@ window.displayProfile = function () {
     const usersCollectionRef = collection(db, 'users');
     const q = query(usersCollectionRef, where('uid', '==', userId));
 
+    // Check if the document exists
     getDocs(q)
         .then((querySnapshot) => {
             if (!querySnapshot.empty) {
                 // User document found
                 querySnapshot.forEach((doc) => {
                     const userData = doc.data();
+                    // Display user data
                     document.getElementById('username').value = userData.username;
                     document.getElementById('email').value = userData.email;
                 });
@@ -99,17 +101,17 @@ window.delacc = function () {
         const usersCollectionRef = collection(db, 'users');
         const q = query(usersCollectionRef, where('uid', '==', userId));
 
-        // Check if the document exists before updating
+        // Check if the document exists before deleting
         getDocs(q)
             .then((querySnapshot) => {
                 if (!querySnapshot.empty) {
                     // User document found
                     querySnapshot.forEach((doc) => {
                         const userDocRef = doc.ref;
-                        // Delete the user's authentication account
+                        // Delete the user document in Firestore
                         deleteDoc(userDocRef)
                             .then(() => {
-                                // Delete the user document in Firestore
+                                // Delete the user's authentication account
                                 return deleteUser(auth.currentUser);
                             })
                             .then(() => {
