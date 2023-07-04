@@ -247,10 +247,12 @@ main {
     text-decoration: none;
 }
 
-.news-card h4,
-.news-card div {
-    padding: 1rem 0.6rem;
-    margin: 0;
+.news-card .title,
+.news-card .publisherdate,
+.news-card .description
+{
+padding: 0.4rem 0.6rem;
+margin: 0;
 }
 
 .publisherdate {

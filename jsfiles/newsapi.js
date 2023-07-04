@@ -14,33 +14,34 @@ async function loadNews(title) {
 loadNews("all").then(data => displayNews(data.articles))
 
 // Display the news
-function displayNews(details) {
-    let mainHTML = ''
-    for (let i = 0; i < details.length; i++) {
-        if (details[i].title) {
-            mainHTML += `
-            <div class="news-card">
-                <div class="news-bmbtn" id="news-bmbtn">
-                    <button id="news-bookmark-btn"><span class="fa fa-star"></span></button>
-                </div>
-                <img src=${details[i].urlToImage} lazy="loading"/>
-                <a href=${details[i].url} style="color:#fff" target="_blank">
-                <h4>${details[i].title}</h4>
-                <div class="publisherdate">
-                    <p>${details[i].source.name}</p>
-                    <span> • </span>
-                    <p>${new Date(details[i].publishedAt).toLocaleDateString()}</p>
-                </div>
-                <div class="description">
-                    ${details[i].description}
-                </div>
-                </a>
-            </div>
-            `
-        }
-    }
-    document.querySelector("main").innerHTML = mainHTML
-}
+// function displayNews(details) {
+//     let mainHTML = ''
+//     for (let i = 0; i < details.length; i++) {
+//         if (details[i].title) {
+//             mainHTML += `
+//             <div class="news-card">
+//                 <div class="news-bmbtn" id="news-bmbtn">
+//                     <button id="news-bookmark-btn"><span class="fa fa-star"></span></button>
+//                 </div>
+//                 <img src=${details[i].urlToImage}/>
+//                 <a href=${details[i].url} style="color:#fff" target="_blank">
+//                 <h4>${details[i].title}</h4>
+//                 <h6>${details[i].author}</h6>
+//                 <div class="publisherdate">
+//                     <p>${details[i].source.name}</p>
+//                     <span> • </span>
+//                     <p>${new Date(details[i].publishedAt).toLocaleDateString()}</p>
+//                 </div>
+//                 <div class="description">
+//                     ${details[i].description}
+//                 </div>
+//                 </a>
+//             </div>
+//             `
+//         }
+//     }
+//     document.querySelector("main").innerHTML = mainHTML
+// }
 
 // Search news
 const searchForm = document.getElementById("search-form")
@@ -98,14 +99,17 @@ function displayNews(details) {
 
             mainHTML += `
           <div class="news-card">
-            <a href=${details[i].url} style="color:#fff" target="_blank">
               <img src=${details[i].urlToImage} lazy="loading"/>
               <div class="news-bookmark-btn" id="news-bookmark-btn">
                 <button class="bookmark-button" id="${newsId}">
                   <span class="fa ${bookmarked ? 'fa-star' : 'fa-star-o'}"></span>
                 </button>
               </div>
-              <h4>${details[i].title}</h4>
+              <a href=${details[i].url} style="color:#fff" target="_blank">
+              <div class="title">
+                <h4>${details[i].title}</h4>
+                <h6>${details[i].author}</h6>
+              </div>
               <div class="publisherdate">
                 <p>${details[i].source.name}</p>
                 <span> • </span>
