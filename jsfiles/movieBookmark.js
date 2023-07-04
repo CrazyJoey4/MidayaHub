@@ -84,9 +84,6 @@ async function displayBookmarkedMovies() {
     const userDocData = doc.data();
     const movieBookmarks = userDocData.movieBookmarks || [];
 
-    // Clear previous bookmarks
-    bookmarkList.innerHTML = '';
-
     // Display each bookmarked movie
     for (const movieID of movieBookmarks) {
       try {

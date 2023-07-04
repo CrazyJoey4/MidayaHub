@@ -22,10 +22,6 @@
                     <input type="text" class="form-control" placeholder="Search news keyword here..." id="news-search-box">
                 </div>
             </form>
-
-            <div class="bmpage-movie">
-                <a href="bookmarkPage.php"><span class="fa fa-star"></span> Bookmarks</a>
-            </div>
         </div>
 
         <br/>
@@ -35,9 +31,11 @@
     '; ?>
 
     <!-- news app js -->
-    <script type="module" src="jsfiles/auth.js"></script>
-    <script src="jsfiles/newsapi.js">
-        document.addEventListener("DOMContentLoaded", function() {
+    <script src="jsfiles/newsapi.js"></script>
+    <script type="module" src="jsfiles/newsBookmark.js"></script>
+    <script src="jsfiles/auth.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
             loadNews("all");
         });
     </script>

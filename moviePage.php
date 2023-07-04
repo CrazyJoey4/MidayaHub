@@ -30,8 +30,8 @@
                 </div>
             </div>
 
-            <div class="bmpage-movie">
-                <a href="bookmarkPage.php"><span class="fa fa-star"></span> Bookmarks</a>
+            <div class="bmpage-btn">
+                <a href="moviebookmarkPage.php"><span class="fa fa-star"></span> Bookmarks</a>
             </div>
         </div>
 
