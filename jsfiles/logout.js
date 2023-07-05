@@ -19,14 +19,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
-checkLoggedIn();
+// For Sign Out
+const signout = document.getElementById('signOut');
 
-// Check if the user is logged in
-function checkLoggedIn() {
-    var userId = localStorage.getItem('userId');
-    console.log(userId);
-    if (!userId) {
-        // User is not logged in, redirect to login page or perform other actions
+signout.addEventListener('click', () => {
+    if (confirm("Are you sure you want to log out?")) {
+        // User confirmed, proceed with logout
         auth.signOut()
             .then(() => {
                 window.location.assign('index.php');
@@ -35,4 +33,4 @@ function checkLoggedIn() {
                 console.error(error);
             });
     }
-}
+});
