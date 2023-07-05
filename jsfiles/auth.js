@@ -19,6 +19,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
+checkLoggedIn();
+
 // Check if the user is logged in
 function checkLoggedIn() {
     var userId = localStorage.getItem('userId');
