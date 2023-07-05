@@ -48,6 +48,7 @@
 </body>
 
 <script type="module" src="jsfiles/profile.js"></script>
+<script type="module" src="jsfiles/logout.js"></script>
 <script type="module" src="jsfiles/auth.js">
      window.addEventListener('DOMContentLoaded', function () {
             checkLoggedIn();
@@ -59,6 +60,7 @@
         displayProfile();
     });
 </script>
+
 <script>
     document.getElementById('profile-form').addEventListener('submit', function (event) {
         event.preventDefault();

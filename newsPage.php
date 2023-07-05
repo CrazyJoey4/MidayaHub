@@ -33,7 +33,7 @@
     <!-- news app js -->
     <script src="jsfiles/newsapi.js"></script>
     <script type="module" src="jsfiles/newsBookmark.js"></script>
-    <script src="jsfiles/auth.js">
+    <script type="module" src="jsfiles/auth.js">
          window.addEventListener('DOMContentLoaded', function () {
             checkLoggedIn();
         });
