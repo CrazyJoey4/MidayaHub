@@ -3,81 +3,25 @@
 <head>
     <title>Music</title>
     <style>
-        body {
-            background-image: url('musicbackground.jpg');
+         body {
+            background-image: url('background.jpg');
             background-size: cover;
             font-family: Arial, sans-serif;
         }
-
-        h1 {
-            color: #fff;
-            text-align: center;
-        }
-
-        .search-form {
-            text-align: center;
-            margin: 20px auto;
-        }
-
-        .search-form input[type="text"] {
-            padding: 10px;
-            font-size: 16px;
-        }
-
-        .search-form input[type="submit"] {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        .search-results {
-            margin: 20px auto;
-            max-width: 500px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
         .track {
             margin-bottom: 10px;
             padding-bottom: 10px;
             border-bottom: 1px solid #ccc;
-        }
-
-        .track img {
-            width: 100px;
-            height: 100px;
-            float: left;
-            margin-right: 10px;
-        }
-
-        .track-info {
-            overflow: hidden;
-            margin-left: 110px;
-        }
-
-        .track-info h3 {
-            margin-top: 0;
-            margin-bottom: 5px;
-        }
-
-        .track-info p {
-            margin: 0;
         }
     </style>
 </head>
 <body>
     <h1>Music Search</h1>
 
-    <div class="search-form">
-        <form method="GET" action="">
-            <input type="text" name="query" placeholder="Enter a song or artist">
-            <input type="submit" value="Search">
-        </form>
-    </div>
+    <form method="GET" action="">
+        <input type="text" name="query" placeholder="Enter a song or artist">
+        <input type="submit" value="Search">
+    </form>
 
     <?php
     if (isset($_GET['query'])) {
@@ -115,4 +59,27 @@
         $tracks = json_decode($searchResult, true)['tracks']['items'];
 
         // Display search results
-        if (!empty($tracks
+        if (!empty($tracks)) {
+            echo '<h2>Search Results:</h2>';
+            foreach ($tracks as $track) {
+                $trackName = $track['name'];
+                $artistName = $track['artists'][0]['name'];
+                $previewUrl = $track['preview_url'];
+
+                echo '<div class="track">';
+                echo '<strong>Track:</strong> ' . $trackName . '<br>';
+                echo '<strong>Artist:</strong> ' . $artistName . '<br>';
+                if ($previewUrl) {
+                    echo '<audio controls><source src="' . $previewUrl . '" type="audio/mpeg"></audio>';
+                } else {
+                    echo 'No preview available.';
+                }
+                echo '</div>';
+            }
+        } else {
+            echo '<p>No tracks found.</p>';
+        }
+    }
+    ?>
+</body>
+</html>
