@@ -6,7 +6,7 @@ const pageSize = 24;
 
 // Retrieve the news from API
 async function loadNews(title) {
-    const url = `https://newsapi.org/v2/everything?q=${title}&pageSize=${pageSize}&sortBy=&apikey=${apikey}`;
+    const url = `https://newsapi.org/v2/everything?q=${title}&pageSize=${pageSize}&apikey=${apikey}`;
     const res = await fetch(`${url}`);
     const data = await res.json();
     return data
