@@ -48,7 +48,11 @@
 </body>
 
 <script type="module" src="jsfiles/profile.js"></script>
-<script type="module" src="jsfiles/auth.js"></script>
+<script type="module" src="jsfiles/auth.js">
+     window.addEventListener('DOMContentLoaded', function () {
+            checkLoggedIn();
+        });
+</script>
 
 <script>
     window.addEventListener('DOMContentLoaded', function() {
